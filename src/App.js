@@ -14,9 +14,9 @@ function App() {
         <img src={OctoLogo} alt="OctoLogo" className="OctoLogo" />
       </header>
 
-      <div>
-        <UnityApp />
-      </div>
+
+      <UnityApp />
+
 
     </div>
   );

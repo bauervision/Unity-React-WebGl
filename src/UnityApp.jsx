@@ -3,28 +3,35 @@ import Unity, { UnityContent } from "react-unity-webgl";
 
 
 const unityContent = new UnityContent(
-    "Build/Web.json",
+    "Build/build.json",
     "Build/UnityLoader.js"
 );
 
 
 const UnityApp = () => {
-
+    const [side, setSide] = useState(null);
     //const [fullscreen, setFullscreen] = useState(false);
 
     //unityContent.setFullscreen(true);
 
-    // unityContent.on("GameOver", score => {
-    //     this.setState({
-    //         gameOver: true,
-    //         score: score
-    //     });
-    // });
+    const capabilities = {
+        "1": "Left",
+        "2": "Middle",
+        "3": "Right"
+    }
+
+    unityContent.on("Select", side => {
+        setSide(capabilities[String(side)]);
+    });
+
 
     return (
         <>
-            <Unity unityContent={unityContent} height="1280" width="720" />
-
+            <Unity unityContent={unityContent} />
+            <div
+                style={{ color: 'orange', fontSize: 24, margin: '5em' }}>
+                {`Currently Selecting Side: ${side ? side : 'None'}`}
+            </div>
         </>
     )
 }
