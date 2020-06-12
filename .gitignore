@@ -21,8 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-public/Build/Web.data.unityweb
-public/Build/Web.wasm.code.unityweb
-public/Build/Web.wasm.framework.unityweb
-public/Build/Web.json
-public/Build/UnityLoader.js
+public/Build/

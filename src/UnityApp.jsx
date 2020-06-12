@@ -25,13 +25,25 @@ const UnityApp = () => {
     });
 
 
+    const sendMessage = (value) => {
+        unityContent.send(
+            "CenterSphere",
+            "UpdateColor",
+            value
+        );
+    }
+
+
     return (
         <>
             <Unity unityContent={unityContent} />
+            <button onClick={() => sendMessage(1)}>Make Red</button>
+            <button onClick={() => sendMessage(2)}>Make Green</button>
             <div
-                style={{ color: 'orange', fontSize: 24, margin: '5em' }}>
+                style={{ color: 'orange', fontSize: 24, margin: '1em' }}>
                 {`Currently Selecting Side: ${side ? side : 'None'}`}
             </div>
+
         </>
     )
 }

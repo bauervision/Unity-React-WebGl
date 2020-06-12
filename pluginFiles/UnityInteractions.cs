@@ -12,6 +12,9 @@ public class Interactions : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void Select(int side);
 
+    [DllImport("__Internal")]
+    private static extern void SendData(int side);
+
     // Then create a function that is going to trigger
     // the imported function from our JSLib.
 
