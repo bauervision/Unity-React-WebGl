@@ -2,14 +2,17 @@ This project is about a simple setup that allows communication from the Unity to
 
 ## Setup
 
-Currently using the [React-Unity-WebGL](https://www.npmjs.com/package/react-unity-webgl) package to handle the comms.
+Currently using the [React-Unity-WebGL](https://www.npmjs.com/package/react-unity-webgl) package to handle the comms, so be sure to install that first.  Then make sure you create your plugin below.
 
 ### `Unity Plugin`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Inside the `pluginFiles` folder, you will see 2 files, `UnityInteractions.cs` and `UnityWebCommPlugin.jslib`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### `.jslib`
+The  file needs to go inside of your Unity Project folder, `Assets/Plugins/WebGL` and contains the skeleton framework to allow Unity to communicate to the external browser.  Add as many methods as you need
+
+
+#### `.cs`
+The `.cs` file can go inside of your Unity Scripts folder as per the usual.  This script has the required code that imports the above plugin, and sets up the public methods that can be called to invoke the external communication.
 
 
