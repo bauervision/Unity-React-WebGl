@@ -9,7 +9,8 @@ const unityContent = new UnityContent(
 
 
 const UnityApp = () => {
-    const [side, setSide] = useState(null);
+    const [selected, setSelected] = useState(null);
+    const [hovered, setHovered] = useState(null);
     //const [fullscreen, setFullscreen] = useState(false);
 
     //unityContent.setFullscreen(true);
@@ -21,7 +22,11 @@ const UnityApp = () => {
     }
 
     unityContent.on("Select", side => {
-        setSide(capabilities[String(side)]);
+        setSelected(capabilities[String(side)]);
+    });
+
+    unityContent.on("Hover", side => {
+        setHovered(capabilities[String(side)]);
     });
 
 
@@ -41,7 +46,12 @@ const UnityApp = () => {
             <button onClick={() => sendMessage(2)}>Make Green</button>
             <div
                 style={{ color: 'orange', fontSize: 24, margin: '1em' }}>
-                {`Currently Selecting Side: ${side ? side : 'None'}`}
+                {`Currently Selecting Side: ${selected ? selected : 'None'}`}
+            </div>
+
+            <div
+                style={{ color: 'orange', fontSize: 24, margin: '1em' }}>
+                {`Currently Hovering Side: ${hovered ? hovered : 'None'}`}
             </div>
 
         </>
