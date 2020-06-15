@@ -1,5 +1,5 @@
 import React from 'react';
-import { OctoLogo } from './images';
+
 
 
 import UnityApp from "./UnityApp";
